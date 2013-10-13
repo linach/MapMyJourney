@@ -1,0 +1,27 @@
+<div data-role="view" id="add-journey-view" data-id="add-journey-view"  data-layout="main-layout" 
+     data-show="app.newJourney.init" 
+     data-title="Add journey">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a id="backbutton" data-align="left" data-role="backbutton">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <div data-role="footer" id="add-journey-footer">
+        <div data-role="tabstrip">
+            <a  href="index.html#home-view" data-icon="home">Go home</a>
+        </div>
+    </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label for="journeyNameInput">Journey name: </label>
+            <input id="journeyNameInput"  type="text" required data-message="Name is required"/>
+        </li>
+        <li>
+            <label for="startDateInput">Starts: </label>
+            <input id="startDateInput" type="date" value="2013-10-14" />
+        </li>
+    </ul>
+    <a class="button" id="add-journey-btn" data-role="button"
+       data-bind="events:{click:addNewJourney}">Add journey</a>
+</div>

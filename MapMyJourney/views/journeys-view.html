@@ -1,0 +1,25 @@
+<div data-role="view" id="journeys-view" data-id="journeys-view"  data-layout="main-layout" 
+     data-title="Journeys" data-show="app.journeys.init">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a id="backbutton" data-align="left" data-role="backbutton">Back</a>
+            <a class="nav-button" data-align="right" data-role="button" data-icon="add" href="views/add-journey-view.html#add-journey-view"></a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <div data-role="footer" id="journeys-footer">
+        <div data-role="tabstrip">
+            <a  href="index.html#home-view" data-icon="home">Go home</a>
+        </div>
+    </div>
+    <ul id="journeys-listview" data-style="inset" data-role="listview" data-template="journeyTemplate"
+        data-bind="source: journeys"></ul>
+</div>
+<!-- Journeys ListView Template -->
+<script type="text/x-kendo-template" id="journeyTemplate">
+    <div data-role="touch" data-bind="events: { tap: tap}">
+        <span> <img id="journey-logo" src="styles/images/trip-icon.png" width="50" height="50"/> </span>
+        <h3>${name}</h3>
+        <time>${startDate}</time>
+    </div>
+</script>

@@ -1,0 +1,29 @@
+<div data-role="view" id="register-view" data-id="register-view"  data-layout="main-layout" data-title="Register">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a id="backbutton" data-align="left" data-role="backbutton">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <div data-role="footer" id="register-footer">
+        <div data-role="tabstrip">
+            <a  href="index.html#home-view" data-icon="home">Go home</a>
+        </div>
+    </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label for="usernameInputRegister">Username: </label>
+            <input id="usernameInputRegister"  type="text"/>
+        </li>
+        <li>
+            <label for="displaynameInput">Displayname: </label>
+            <input id="displaynameInput"  type="text"/>
+        </li>
+        <li>
+            <label for="passwordInputRegister">Password: </label>
+            <input id="passwordInputRegister" type="password"/>
+        </li>
+    </ul>
+    <a class="button" id="register-btn-register-view" data-role="button"
+       data-click="app.loginRegister.register">Register</a>
+</div>

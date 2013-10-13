@@ -1,21 +1,26 @@
-(function (global) {
-    var mobileSkin = "",
-        app = global.app = global.app || {};
-
-    document.addEventListener("deviceready", function () {
-        app.application = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout" });
-    }, false);
-
-    app.changeSkin = function (e) {
-        if (e.sender.element.text() === "Flat") {
-            e.sender.element.text("Native");
-            mobileSkin = "flat";
-        }
-        else {
-            e.sender.element.text("Flat");
-            mobileSkin = "";
-        }
-
-        app.application.skin(mobileSkin);
-    };
-})(window);
+var app=app|| {};
+(function(){
+    var showAlert = function(message, title, callback) {
+		navigator.notification.alert(message, callback || function () {
+		}, title, 'OK');
+	};
+	var showError = function(message) {
+        console.log(message);
+		showAlert(message, 'Error occured');
+	};
+	window.addEventListener('error', function (e) {
+		e.preventDefault();
+		var message = e.message + "' from " + e.filename + ":" + e.lineno;
+        console.log(message);
+		showAlert(message, 'Error occured');
+		return true;
+	});
+    
+    document.addEventListener("deviceready", function(){
+        var kendoApp= new kendo.mobile.Application(document.body);
+        app.mobileApp= kendoApp;
+    });
+    
+   app.showError=showError;
+  
+})();

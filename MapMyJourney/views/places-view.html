@@ -1,0 +1,43 @@
+<div data-role="view" id="places-view" data-id="places-view"  data-layout="main-layout" 
+     data-title="Places" data-show="app.places.init">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a id="backbutton" data-align="left" data-role="backbutton">Back</a>
+            <a class="nav-button" data-align="right" data-role="button" data-icon="add"
+               data-bind="events: { click: navigateToAddPlace}"></a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <ul id="places-listview" data-style="inset" data-role="listview" data-template="placeTemplate"
+        data-bind="source: places"></ul>
+    <div data-role="footer" id="places-footer">
+        <div data-role="tabstrip">
+            <a  href="index.html#home-view" data-icon="home">Go home</a>
+            <a id="map-a" data-rel="modalview" href="#map-view" data-icon="globe">See journey on map</a>
+        </div>
+    </div>
+</div>
+
+<div data-role="modalview" data-id="map-view" id="map-view" data-stretch="true" style="width: 95%; height: 28em;" data-init="app.places.initalize">
+    <div data-role="header">
+        <div data-role="navbar">
+            <a data-click="app.places.viewRoute" data-role="button" data-align="left" data-icon="search">View all places on map</a>
+            <a data-click="closeMapView" data-role="button" data-align="right">OK</a>
+        </div>
+    </div>
+    <div id="map-canvas" style="width: 100%; height: 100%; position: absolute;" ></div>
+</div>
+
+<script>
+    function closeMapView() {
+        $("#map-view").kendoMobileModalView("close");
+    }
+</script>
+
+<!-- Journeys ListView Template -->
+<script type="text/x-kendo-template" id="placeTemplate">
+    <div data-role="touch" data-bind="events: { tap: tap}">
+        <h3>${name}</h3>
+        <span> <img id="place-logo" src='${picture}' width="100" height="70"/> </span>
+    </div>
+</script>

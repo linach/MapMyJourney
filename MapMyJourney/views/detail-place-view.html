@@ -1,0 +1,29 @@
+<div data-role="view" id="detail-place-view" data-id="detail-place-view"  data-layout="main-layout" data-title="Detail place" 
+     data-show="app.detailPlace.init">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a id="backbutton" data-align="left" data-role="backbutton">Back</a>
+            <img data-role="button" data-bind="events:{click:shareToFacebook}" id="share-on-facebook"
+                 data-align="right" src="styles/images/facebookshare.png"/>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <div data-role="footer" id="detail-place-footer">
+        <div data-role="tabstrip">
+            <a  href="index.html#home-view" data-icon="home">Go home</a>
+        </div>
+    </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <h3 data-bind="text: currentPlace.name" id="placeName"></h3>
+        </li>
+        <li>
+            <img data-bind="attr: { src: currentPlace.picture}" id="place-pic" width="270" height="180" >
+        </li>
+        <li>
+            <label for="placeComment">Comment: </label>
+            <div   data-bind="text: currentPlace.comment" id="placeComment" style="resize: none" height="50"></div>
+        </li>
+    </ul>
+
+</div>

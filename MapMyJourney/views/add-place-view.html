@@ -1,0 +1,29 @@
+<div data-role="view" id="add-place-view" data-id="add-place-view"  data-layout="main-layout" data-title="Add place" 
+    data-show="app.addPlaces.init">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a id="backbutton" data-align="left" data-role="backbutton">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <div data-role="footer" id="add-place-footer">
+            <div data-role="tabstrip">
+                <a  href="index.html#home-view" data-icon="home">Go home</a>
+            </div>
+        </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label for="placeNameInput">Place name: </label>
+            <input id="placeNameInput"  type="text" required data-message="Name is required"/>
+        </li>
+        <li>
+            <img id="new-place-pic" data-role="button" src="#" data-bind="events:{click:takePicture}" width="240" height="150" >
+        </li>
+        <li>
+            <label for="placeCommentInput">Comment: </label>
+            <textarea id="placeCommentInput" style="resize: none" height="50"></textarea>
+        </li>
+    </ul>
+     <a class="button" id="add-place-btn" data-role="button"
+        data-bind="events:{click:addNewPlace}">Add place</a>
+</div>
